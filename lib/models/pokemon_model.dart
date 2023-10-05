@@ -2,41 +2,21 @@ import 'dart:convert';
 
 class pokemon_model {
   pokemon_model({
-    required this.id,
     required this.name,
-    required this.baseExperience,
-    required this.height,
-    required this.isDefault,
-    required this.order,
-    required this.weight,
+    required this.url,
   });
 
-  int id;
   String name;
-  int baseExperience;
-  int height;
-  bool isDefault;
-  int order;
-  int weight;
+  String url;
 
   factory pokemon_model.fromJson(Map<String, dynamic> json) => pokemon_model(
-    id: json["id"],
     name: json["name"],
-    baseExperience: json["base_experience"],
-    height: json["height"],
-    isDefault: json["is_default"],
-    order: json["order"],
-    weight: json["weight"],
+    url: json["url"],
   );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
     "name": name,
-    "base_experience": baseExperience,
-    "height": height,
-    "is_default": isDefault,
-    "order": order,
-    "weight": weight,
+    "weight": url,
   };
   
   static List<pokemon_model> pokemonModelFromJson(String str) =>
